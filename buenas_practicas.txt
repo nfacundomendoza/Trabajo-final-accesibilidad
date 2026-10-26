@@ -1,0 +1,129 @@
+================================================================================
+1. PRINCIPIOS GENERALES Y ETAPAS DE DESARROLLO
+================================================================================
+- Estándares web: Diseñar según pautas W3C / WCAG (actualmente WCAG 2.2) y evitar recursos no estándar que degraden la experiencia en tecnologías asistivas (lectores de pantalla, navegadores de texto, etc.).
+
+================================================================================
+2. ESTRUCTURA Y DECLARACIONES BÁSICAS DEL DOCUMENTO
+================================================================================
+A. Declaración de Doctype adecuada:
+   - Debe ser la primera línea del documento HTML (sin espacios ni saltos de línea previos) para evitar que el navegador entre en "Quirks Mode" (modo de compatibilidad/aberrante).
+   - En HTML5: <!DOCTYPE html>
+
+B. Definición del lenguaje principal (lang):
+   - Fundamental para que lectores de pantalla adopten la pronunciación/diccionario correcto y para traducción asistida en navegadores.
+   - Declarado en la etiqueta raíz html:
+     Ejemplo: <html lang="es"> (o "en", "fr", etc.)
+
+C. Título descriptivo y significativo (<title>):
+   - Factor clave de orientación para usuarios de lectores de pantalla y braille.
+   - Debe ser específico para cada página o sección interna.
+   - Puede incluir el nombre del sitio web separado por caracteres sencillos (por ej. "Contacto - MiSitio" o "Contacto : MiSitio").
+   - Evitar construcciones o adornos ASCII innecesarios.
+
+D. Metadatos y ayudas extras de navegación en el <head>:
+   - Vínculos <link> de relación estándar que asisten a navegadores y tecnologías asistivas a conocer la jerarquía del sitio.
+   - Ejemplos:
+     <link rel="home" href="https://ejemplo.com" title="Página principal" />
+     <link rel="prev" href="pagina1.html" title="Página anterior" />
+     <link rel="next" href="pagina3.html" title="Página siguiente" />
+   - El atributo 'title' debe ser claro y descriptivo.
+
+================================================================================
+3. ARQUITECTURA DE LA INFORMACIÓN Y NAVEGACIÓN
+================================================================================
+A. Orden lógico: Contenido principal antes de la navegación:
+   - Los lectores de pantalla y navegadores de texto recorren el HTML de forma secuencial.
+   - Ubicar el contenido principal prioritariamente en el flujo del código para no obligar al usuario a escuchar cientos de enlaces de menú antes de llegar a la información.
+   - Mediante CSS (técnicas de posicionamiento, flexbox, grid o flotado) se ajusta la apariencia visual sin alterar el orden lógico semántico.
+
+B. Enlaces de salto directo ("Skip to content"):
+   - Si no es viable alterar el orden estructural (por ejemplo, limitaciones de CMS o plantillas), se debe incluir al inicio un enlace de salto interno:
+     Ejemplo: <a href="#contenido-principal" class="skip-link">Saltar al contenido principal</a>
+   - Puede ocultarse visualmente con CSS y hacerse visible al recibir el foco del teclado, o mantenerse oculto solo a la vista gráfica, asegurando que lectores de pantalla y teclado accedan a él inmediatamente.
+
+C. Vínculos claros y descriptivos:
+   - Evitar textos genéricos como "click aquí", "más info" o "leer más" fuera de contexto.
+   - El texto del enlace debe describir claramente el destino o acción.
+   - Uso complementario del atributo 'title' para aportar contexto adicional al usuario (útil también ante conexiones lentas o descripciones de archivos).
+
+================================================================================
+4. ACCESIBILIDAD DESDE EL TECLADO Y ATAJOS
+================================================================================
+A. Atajos de teclado (accesskey):
+   - Atributo que permite activar enlaces o dar foco directo a campos de formulario mediante combinaciones de teclas (ej. Alt en Windows, Ctrl en Mac / Ctrl+Alt).
+   - Ejemplo: <a href="contacto.html" accesskey="c">Contacto (Alt+C)</a>
+
+B. Orden de tabulación (tabindex):
+   - Controla el flujo secuencial de navegación por teclado con la tecla 'Tab'.
+   - Útil para ordenar la entrada a campos de formulario y botones en secuencias complejas.
+
+================================================================================
+5. TABLAS DE DATOS ACCESIBLES
+================================================================================
+A. Resúmenes de tabla (summary o caption descriptivo):
+   - Proporcionar una descripción previa del propósito y organización de los datos tabulares.
+   - Permite al usuario de lector de pantalla saber rápidamente de qué trata la tabla sin tener que escuchar todas las filas y celdas antes de decidir si le es útil.
+
+B. Cabeceras reales y explícitas (<th>):
+   - Estructurar la tabla usando sus componentes semánticos:
+     <thead>: fila de encabezados con etiquetas <th>.
+     <tbody>: datos de la tabla con celdas <td>.
+     <tfoot>: pie de tabla o resumen de totales.
+   - Uso del atributo 'scope':
+     <th scope="col">Nombre de Columna</th>
+     <th scope="row">Nombre de Fila</th>
+   - Permite que los lectores de pantalla automaticen la relación bidimensional fila-columna al navegar por cualquier celda.
+
+================================================================================
+6. ESTRUCTURA DE LISTAS SEMÁNTICAS
+================================================================================
+Utilizar el elemento HTML acorde al tipo de contenido para que el sintetizador de voz informe correctamente la cantidad de elementos y jerarquía:
+- Listas ordenadas (<ol> + <li>): Para secuencias, pasos o clasificaciones ordenadas por números.
+- Listas no ordenadas (<ul> + <li>): Para listados generales de elementos (menús de navegación, listas de enlaces, viñetas).
+- Listas de definiciones o términos (<dl>, <dt>, <dd>): Para glosarios, pares clave-valor o diccionarios (<dt> término, <dd> descripción).
+
+================================================================================
+7. IMÁGENES Y CONTENIDO VISUAL
+================================================================================
+A. Texto alternativo obligatorio y descriptivo (atributo alt):
+   - Todo elemento <img> debe incluir el atributo 'alt'.
+   - El texto debe describir con fidelidad lo que la imagen transmite o su función en el contexto.
+   - NUNCA usar textos vacíos de significado como "Imagen", "Foto 1", "Gráfico" o el nombre de archivo (ej. "banner.jpg").
+   - Imágenes decorativas: Deben poseer alt="" (o aria-hidden="true") para que las tecnologías asistivas las ignoren y no interrumpan la lectura.
+
+================================================================================
+8. FORMULARIOS ACCESIBLES
+================================================================================
+Los formularios representan el punto principal de entrada interactiva y recopilación de datos:
+A. Asociación explícita con <label>:
+   - Todo campo interactivo (<input>, <textarea>, <select>) debe contar con su etiqueta <label> correspondiente.
+   - La vinculación debe ser explícita mediante el atributo 'for' del label y el 'id' del control:
+     <label for="txt-usuario">Nombre de usuario:</label>
+     <input type="text" id="txt-usuario" name="usuario" />
+   - Facilita que el lector de pantalla enuncie la etiqueta apenas el campo toma foco y amplía el área de clic para personas con motricidad reducida.
+
+B. Atributos de navegación y foco (tabindex y accesskey):
+   - Definir un 'tabindex' secuencial si la disposición visual difiere del orden DOM.
+   - Incluir atajos 'accesskey' en campos clave o botones de acción para acceso rápido.
+     Ejemplo:
+     <label for="txt-email">Correo electrónico:</label>
+     <input type="email" id="txt-email" name="email" tabindex="2" accesskey="e" />
+
+================================================================================
+9. APLICACIÓN AL TRABAJO FINAL (CHECKLIST DE REQUISITOS)
+================================================================================
+Requisitos de la consigna vinculados a las buenas prácticas de la unidad:
+1. Menú de opciones:
+   - Estructurado como lista semántica (<nav> con <ul> y <li>).
+   - Enlaces descriptivos (sin "click aquí") y enlaces de salto ("Saltar al contenido principal").
+2. Imágenes:
+   - Atributos 'alt' precisos y descriptivos para imágenes con contenido informativo; alt="" para decorativas.
+3. Videos / Multimedia:
+   - Controles accesibles por teclado, subtítulos y transcripciones de texto descriptivas.
+4. Formularios:
+   - Etiquetas <label for="..."> vinculadas estrictamente a los id de cada input/select/textarea.
+   - Navegación clara por teclado (tabindex / accesskey).
+5. Componente adicional (Tablas / Widgets / Carruseles):
+   - En Tablas: cabeceras <th>, atributos scope="col|row", <caption> o resumen explicativo.
+   - En Carruseles / Widgets: compatibilidad con foco de teclado, pausa de animaciones y etiquetas descriptivas.
