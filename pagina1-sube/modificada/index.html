@@ -154,38 +154,34 @@
           </div>
 
           <div class="hidden-xs">
-            <ul class="nav navbar-nav navbar-right list-inline m-b-0">
-              <li>
-                <div class="pull-left">
-                  <form class="main-form" role="search" action="/sube" method="post" id="apachesolr-search-custom-page-search-form" accept-charset="UTF-8">
-                    <div>
-                      <input type="hidden" name="form_build_id" value="form-yx15Yibqg7o6kabm0JWr44Eff1kmfuHMnJSoKWrOIlc" />
-                      <input type="hidden" name="form_id" value="apachesolr_search_custom_page_search_form" />
-                      <div style="display:none;">
-                        <div class="form-item form-item-tarro-de-miel form-type-textfield form-group">
-                          <label class="control-label" for="edit-tarro-de-miel-apachesolr-search-custom-page-search-form">Dejar en blanco</label>
-                          <input id="edit-tarro-de-miel-apachesolr-search-custom-page-search-form" class="form-control form-text" type="text" name="tarro_de_miel" value="" size="60" maxlength="128" />
-                        </div>
-                      </div>
-                      <div class="input-group">
-                        <label class="sr-only" for="edit-keys">Buscar en el sitio (Alt+B)</label>
-                        <input placeholder="Buscá en el sitio" id="edit-keys" class="input-search form-control form-text" aria-label="Buscá en el sitio" type="search" name="keys" value="" size="20" maxlength="255" accesskey="b" tabindex="1" />
-                        <span class="input-group-btn">
-                          <button class="bg-white btn-search-reset btn btn-primary form-submit" aria-labelledby="edit-keys" aria-label="Buscar" type="submit" id="edit-submit" name="op" value="Buscar" tabindex="2"><i class="fa fa-search text-primary" aria-hidden="true"></i><span class="sr-only">Buscar en el sitio</span></button>
-                        </span>
+            <div class="nav navbar-nav navbar-right">
+              <div class="pull-left">
+                <form class="main-form" role="search" action="/sube" method="post" id="apachesolr-search-custom-page-search-form" accept-charset="UTF-8">
+                  <div>
+                    <input type="hidden" name="form_build_id" value="form-yx15Yibqg7o6kabm0JWr44Eff1kmfuHMnJSoKWrOIlc" />
+                    <input type="hidden" name="form_id" value="apachesolr_search_custom_page_search_form" />
+                    <div style="display:none;">
+                      <div class="form-item form-item-tarro-de-miel form-type-textfield form-group">
+                        <label class="control-label" for="edit-tarro-de-miel-apachesolr-search-custom-page-search-form">Dejar en blanco</label>
+                        <input id="edit-tarro-de-miel-apachesolr-search-custom-page-search-form" class="form-control form-text" type="text" name="tarro_de_miel" value="" size="60" maxlength="128" />
                       </div>
                     </div>
-                  </form>
-                </div>
-              </li>
-              <li>
-                <div id="cd-login">
-                  <a href="https://mi.argentina.gob.ar/" id="btn-mi-argentina" class="btn p-l-1 btn-login bg-miarg-azul" aria-label="Ingresar a Mi Argentina" title="Ingresar al portal Mi Argentina (Alt+M)" accesskey="m">
-                    <i class="fa-3x fa icono-arg-mi-argentina-extended text-white p-t-0" aria-hidden="true"></i><span class="sr-only">Mi Argentina</span>
-                  </a>
-                </div>
-              </li>
-            </ul>
+                    <div class="input-group">
+                      <label class="sr-only" for="edit-keys">Buscar en el sitio (Alt+B)</label>
+                      <input placeholder="Buscá en el sitio" id="edit-keys" class="input-search form-control form-text" aria-label="Buscá en el sitio" type="search" name="keys" value="" size="20" maxlength="255" accesskey="b" tabindex="1" />
+                      <span class="input-group-btn">
+                        <button class="bg-white btn-search-reset btn btn-primary form-submit" aria-labelledby="edit-keys" aria-label="Buscar" type="submit" id="edit-submit" name="op" value="Buscar" tabindex="2"><i class="fa fa-search text-primary" aria-hidden="true"></i><span class="sr-only">Buscar en el sitio</span></button>
+                      </span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div id="cd-login" class="pull-right">
+                <a href="https://mi.argentina.gob.ar/" id="btn-mi-argentina" class="btn p-l-1 btn-login bg-miarg-azul" aria-label="Ingresar a Mi Argentina" title="Ingresar al portal Mi Argentina (Alt+M)" accesskey="m">
+                  <i class="fa-3x fa icono-arg-mi-argentina-extended text-white p-t-0" aria-hidden="true"></i><span class="sr-only">Mi Argentina</span>
+                </a>
+              </div>
+            </div>
           </div>
                         
         </div>
@@ -408,7 +404,7 @@
                             <img src="https://www.argentina.gob.ar/sites/default/files/styles/listado/public/2026/10/web_sube_aniversario.png?itok=hLf53fKA" alt="Celebración del 16 aniversario de SUBE, sumando más localidades y tecnología" class="img-responsive" />
                         </div>
                         <div class="panel-body">
-                            <h3>SUBE cumple 16 años: más localidades, más tecnología y más opciones de pago para viajar</h3>
+                            <h3 aria-hidden="true">SUBE cumple 16 años: más localidades, más tecnología y más opciones de pago para viajar</h3>
                         </div>
                     </a>
                 </div>
@@ -420,7 +416,7 @@
                             <img src="https://www.argentina.gob.ar/sites/default/files/styles/listado/public/2026/09/chubut_web.png?itok=NN3xRoxe" alt="Provincia de Chubut incorpora vinculación del Certificado Único de Discapacidad a la tarjeta SUBE" class="img-responsive" />
                         </div>
                         <div class="panel-body">
-                            <h3>Más accesibilidad en Chubut: ya tenés la opción de elegir vincular el CUD a la tarjeta SUBE</h3>
+                            <h3 aria-hidden="true">Más accesibilidad en Chubut: ya tenés la opción de elegir vincular el CUD a la tarjeta SUBE</h3>
                         </div>
                     </a>
                 </div>
@@ -432,7 +428,7 @@
                             <img src="https://www.argentina.gob.ar/sites/default/files/styles/listado/public/2026/08/portada_web_canales_oficiales.jpg?itok=f0E_mQye" alt="Canales oficiales de atención y contacto de SUBE" class="img-responsive" />
                         </div>
                         <div class="panel-body">
-                            <h3>Conocé nuestros canales oficiales de contacto</h3>
+                            <h3 aria-hidden="true">Conocé nuestros canales oficiales de contacto</h3>
                         </div>
                     </a>
                 </div>
@@ -444,7 +440,7 @@
                             <img src="https://www.argentina.gob.ar/sites/default/files/styles/listado/public/2026/08/placa_web_sube.jpg?itok=hWw-estW" alt="Asociación del Certificado Único de Discapacidad en Azul, Ramallo, Villa María y Santa Rosa" class="img-responsive" />
                         </div>
                         <div class="panel-body">
-                            <h3>En Azul, Ramallo, Villa María y Santa Rosa ya tenés la opción de asociar el Certificado Único de Discapacidad a la tarjeta SUBE</h3>
+                            <h3 aria-hidden="true">En Azul, Ramallo, Villa María y Santa Rosa ya tenés la opción de asociar el Certificado Único de Discapacidad a la tarjeta SUBE</h3>
                         </div>
                     </a>
                 </div>
