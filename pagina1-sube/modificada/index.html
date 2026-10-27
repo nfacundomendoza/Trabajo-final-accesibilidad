@@ -134,39 +134,59 @@
   </div>
     
 <header>
-    <nav class="navbar navbar-top navbar-default border-bottom-amarillo">
+    <nav class="navbar navbar-top navbar-default border-bottom-amarillo" aria-label="Navegación general del portal">
       <div class="container">
         <div>
           <div class="navbar-header">
             <a class="navbar-brand" href="/" id="navbar-brand" aria-label="Argentina.gob.ar Presidencia de la Nación">
-                              <img src="/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/logo_argentina-azul.svg" alt="Argentina.gob.ar" height="50" width="254" />
-                                                      </a>
-              <a class="btn btn-mi-argentina btn-login visible-xs bg-miarg-azul" href="https://mi.argentina.gob.ar" title="Ingresar a Mi Argentina">
-                  <i class="icono-arg-mi-argentina text-white"></i><span class="sr-only">Ir a Mi Argentina</span></a>
-                                      <button onclick="jQuery('.navbar.navbar-top').addClass('state-search');" class="btn btn-mi-argentina btn-login visible-xs" aria-labelledby="edit-keys"><span class="fa fa-search fa-fw"></span><span class="sr-only">Buscar</span></button>       
-                            </div>
+              <img src="/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/logo_argentina-azul.svg" alt="Argentina.gob.ar" height="50" width="254" />
+            </a>
+            <ul class="nav navbar-nav visible-xs pull-right list-inline m-b-0">
+              <li>
+                <a class="btn btn-mi-argentina btn-login bg-miarg-azul" href="https://mi.argentina.gob.ar" title="Ingresar a Mi Argentina">
+                  <i class="icono-arg-mi-argentina text-white"></i><span class="sr-only">Ir a Mi Argentina</span>
+                </a>
+              </li>
+              <li>
+                <button onclick="jQuery('.navbar.navbar-top').addClass('state-search');" class="btn btn-mi-argentina btn-login" aria-labelledby="edit-keys"><span class="fa fa-search fa-fw"></span><span class="sr-only">Buscar</span></button>
+              </li>
+            </ul>
+          </div>
 
-                                          <div class="nav navbar-nav navbar-right hidden-xs">
-    <button onclick="jQuery('.navbar.navbar-top').removeClass('state-search');" class="btn btn-link btn-search-reset visible-xs"> <i class="fa fa-times"><span class="sr-only">Cerrar el buscador</span></i></button>
-    <div id="cd-login">
-      
-  <a href="https://mi.argentina.gob.ar/" id="btn-mi-argentina" class="btn hidden-xs p-l-1  btn-login bg-miarg-azul" aria-label="Ingresar a Mi Argentina">
-<i class=" fa-3x fa icono-arg-mi-argentina-extended text-white p-t-0"><span class="sr-only">Mi Argentina</span></i></a>
-</div>
-<!-- <section id="block-argentinagobar-search-apache-solr-search-navbar" class="block block-argentinagobar-search clearfix"> -->
-
-      
-  <div class="pull-left">
-  <form class="main-form" role="search" action="/sube" method="post" id="apachesolr-search-custom-page-search-form" accept-charset="UTF-8"><div><input type="hidden" name="form_build_id" value="form-yx15Yibqg7o6kabm0JWr44Eff1kmfuHMnJSoKWrOIlc" />
-<input type="hidden" name="form_id" value="apachesolr_search_custom_page_search_form" />
-<div style="display:none;"><div class="form-item form-item-tarro-de-miel form-type-textfield form-group"> <label class="control-label" for="edit-tarro-de-miel-apachesolr-search-custom-page-search-form">Dejar en blanco</label>
-<input id="edit-tarro-de-miel-apachesolr-search-custom-page-search-form" class="form-control form-text" type="text" name="tarro_de_miel" value="" size="60" maxlength="128" /></div></div><div class="input-group">
-  <label class="sr-only" for="edit-keys">Buscar en el sitio</label><input placeholder="Buscá en el sitio" id="edit-keys" class="input-search form-control form-text" aria-label="Buscá en el sitio" type="text" name="keys" value="" size="20" maxlength="255" /><span class="input-group-btn"><button class="bg-white btn-search-reset btn btn-primary form-submit" aria-labelledby="edit-keys" aria-label="Buscar" type="submit" id="edit-submit" name="op" value="&lt;i class=&quot;fa fa-search text-primary&quot;&gt;&lt;/i&gt;&lt;span class=&quot;sr-only&quot;&gt;Buscar en el sitio&lt;/span&gt;"><i class="fa fa-search text-primary"></i><span class="sr-only">Buscar en el sitio</span></button>
-</span></div>
-</div></form></div>
-
-<!-- </section> -->
-</div>
+          <div class="hidden-xs">
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <div id="cd-login">
+                  <a href="https://mi.argentina.gob.ar/" id="btn-mi-argentina" class="btn p-l-1 btn-login bg-miarg-azul" aria-label="Ingresar a Mi Argentina" title="Ingresar al portal Mi Argentina">
+                    <i class="fa-3x fa icono-arg-mi-argentina-extended text-white p-t-0"><span class="sr-only">Mi Argentina</span></i>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="pull-left">
+                  <form class="main-form" role="search" action="/sube" method="post" id="apachesolr-search-custom-page-search-form" accept-charset="UTF-8">
+                    <div>
+                      <input type="hidden" name="form_build_id" value="form-yx15Yibqg7o6kabm0JWr44Eff1kmfuHMnJSoKWrOIlc" />
+                      <input type="hidden" name="form_id" value="apachesolr_search_custom_page_search_form" />
+                      <div style="display:none;">
+                        <div class="form-item form-item-tarro-de-miel form-type-textfield form-group">
+                          <label class="control-label" for="edit-tarro-de-miel-apachesolr-search-custom-page-search-form">Dejar en blanco</label>
+                          <input id="edit-tarro-de-miel-apachesolr-search-custom-page-search-form" class="form-control form-text" type="text" name="tarro_de_miel" value="" size="60" maxlength="128" />
+                        </div>
+                      </div>
+                      <div class="input-group">
+                        <label class="sr-only" for="edit-keys">Buscar en el sitio</label>
+                        <input placeholder="Buscá en el sitio" id="edit-keys" class="input-search form-control form-text" aria-label="Buscá en el sitio" type="text" name="keys" value="" size="20" maxlength="255" />
+                        <span class="input-group-btn">
+                          <button class="bg-white btn-search-reset btn btn-primary form-submit" aria-labelledby="edit-keys" aria-label="Buscar" type="submit" id="edit-submit" name="op" value="Buscar"><i class="fa fa-search text-primary"></i><span class="sr-only">Buscar en el sitio</span></button>
+                        </span>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </div>
                         
         </div>
       </div>
@@ -212,7 +232,7 @@
 
   
   </div>
-  <section class="bg-gray section-sm">
+  <nav class="bg-gray section-sm" aria-label="Accesos rápidos SUBE">
     <div class="">
       <div class="panel-pane pane-atajos"  >
   
@@ -224,27 +244,27 @@
             <div class="col-md-12">
 				<ul class="list-inline pull-left w-100 p-b-1 ">
 							
-				    		<li class="enc-link"><a href="https://tarjetasube.sube.gob.ar/SubeWeb/WebForms/Account/Views/Login.aspx" target="_blank" rel="noopener noreferrer" title="Abre en pestaña nueva"><span>Ingresá a tu cuenta</span>
+				    		<li class="enc-link"><a href="https://tarjetasube.sube.gob.ar/SubeWeb/WebForms/Account/Views/Login.aspx" target="_blank" rel="noopener noreferrer" title="Ingresá a tu cuenta SUBE (abre en pestaña nueva)"><span>Ingresá a tu cuenta</span>
 </a></li>
     	
 				    		
-				    		<li class="enc-link"><a href="/sube/carga"><span>Conseguila </span>
+				    		<li class="enc-link"><a href="/sube/carga" title="Conseguí tu tarjeta SUBE"><span>Conseguila</span>
 </a></li>
     	
 				    		
-				    		<li class="enc-link"><a href="https://tarjetasube.sube.gob.ar/SubeWeb/WebForms/Account/Views/clave-sube-registro.aspx" target="_blank" rel="noopener noreferrer" title="Abre en pestaña nueva"><span>Registrala</span>
+				    		<li class="enc-link"><a href="https://tarjetasube.sube.gob.ar/SubeWeb/WebForms/Account/Views/clave-sube-registro.aspx" target="_blank" rel="noopener noreferrer" title="Registrá tu tarjeta SUBE (abre en pestaña nueva)"><span>Registrala</span>
 </a></li>
     	
 				    		
-				    		<li class="enc-link"><a href="https://tarjetasube.sube.gob.ar/subeweb/Webforms/Account/Views/solicitar-tarjeta.aspx" target="_blank" rel="noopener noreferrer" title="Abre en pestaña nueva"><span>Comprala online</span>
+				    		<li class="enc-link"><a href="https://tarjetasube.sube.gob.ar/subeweb/Webforms/Account/Views/solicitar-tarjeta.aspx" target="_blank" rel="noopener noreferrer" title="Comprá tu tarjeta SUBE online (abre en pestaña nueva)"><span>Comprala online</span>
 </a></li>
     	
 				    		
-				    		<li class="enc-link"><a href="https://tarjetasube.sube.gob.ar/subeweb/WebForms/Account/Views/consulta-titularidad.aspx" target="_blank" rel="noopener noreferrer" title="Abre en pestaña nueva"><span>Consultá titularidad</span>
+				    		<li class="enc-link"><a href="https://tarjetasube.sube.gob.ar/subeweb/WebForms/Account/Views/consulta-titularidad.aspx" target="_blank" rel="noopener noreferrer" title="Consultá la titularidad de tu tarjeta SUBE (abre en pestaña nueva)"><span>Consultá titularidad</span>
 </a></li>
     	
 				    		
-				    		<li class="enc-link"><a href="/sube/preguntas-frecuentes"><span>Preguntas Frecuentes</span>
+				    		<li class="enc-link"><a href="/sube/preguntas-frecuentes" title="Preguntas frecuentes sobre la tarjeta SUBE"><span>Preguntas Frecuentes</span>
 </a></li>
     	
 				    				</ul>
@@ -257,7 +277,7 @@
   
   </div>
     </div>
-  </section>
+  </nav>
 <section>
   <div class="container">
     <div class="panel-pane pane-titulo"  >
