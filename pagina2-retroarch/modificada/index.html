@@ -176,7 +176,7 @@
     <div class="container">
         <h1>Features</h1>
 
-        <div id="features-carousel" class="carousel slide" data-ride="carousel" data-interval="false" aria-label="Carrusel de características de RetroArch">
+        <div id="features-carousel" class="carousel slide" data-interval="false" aria-label="Carrusel de características de RetroArch">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#features-carousel" data-slide-to="0" class="active" aria-label="Diapositiva 1: New Update v1.21.0"></li>
@@ -333,6 +333,16 @@
                 </div>
 
             </div>
+
+            <!-- Controles anterior y siguiente accesibles -->
+            <a class="left carousel-control" href="#features-carousel" role="button" data-slide="prev" aria-label="Diapositiva anterior">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="right carousel-control" href="#features-carousel" role="button" data-slide="next" aria-label="Diapositiva siguiente">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
         </div>
     </div>
 </div>
@@ -520,5 +530,18 @@
             <p>Â© 2026 RetroArch. RetroArch is a registered trademark in the United States of America, the European Union and China.</p>
         </footer>
         <script src="js/news.js"></script>
+        <script>
+            // Asegurar que el carrusel de features no inicie automÃ¡ticamente y estÃ© pausado
+            window.addEventListener('DOMContentLoaded', function () {
+                var checkJQuery = setInterval(function () {
+                    if (window.jQuery && jQuery.fn.carousel) {
+                        clearInterval(checkJQuery);
+                        jQuery('#features-carousel').carousel({
+                            interval: false
+                        }).carousel('pause');
+                    }
+                }, 50);
+            });
+        </script>
     </body>
 </html>
